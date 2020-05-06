@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Grand+Hotel&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+--slantedtext:'Grand Hotel', cursive;
+--primarykey:#698f3f;
+--secondrykey:#fca311;
+--maindark:#3a3a3b;
+--mainwhite:#fff;
+--maingrey:#e5e5e5;
+--maintransation:all 0.3s ease-in-out;
+--letterspacing:0.5rem;
+}
+body{
+    font-family: "Catamaran",sans-serif;
+    line-height: 1.5;
+}
+/*nav-btn*/
+.nav-btn{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: var(--primarykey);
+    margin:1rem 1.3rem;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/*navbar*/
+.navbar{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--maingrey);
+    padding-top: 1rem;
+    padding-left: 2rem;
+    transition: var(--maintransation);
+    transform: translateX(-100%);
+}
+.show{
+    transform: translateX(0);
+}
+.nav-close{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.nav-items{
+    list-style-type: none;
+}
+.nav-link{
+    display: block;
+    text-transform: uppercase;
+    color: var(--primarykey);
+    font-size: 2rem;
+        transition: var(--maintransation);
+}
+.nav-link:hover{
+    color: var(--maindark);
+    padding-left: 0.5rem;
+}
+@media screen and (min-width: 768px){
+    .navbar{
+        width: 30%;
+        max-width: 20rem;
+    }
+}
+.header{
+    min-height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url("./tea.jpeg") center/cover no-repeat fixed;
+    position: relative;
+}
+.banner{
+    position: absolute;
+    top:50%;
+    left:50%;
+    text-align: center;
+transform: translate(-50%,-50%);
+letter-spacing: var(--letterspacing);
+}
+.clearfix::before,.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.banner-subtitle{
+    color: var(--primarykey);
+    font-family: var(--slantedtext);
+    font-size: 2rem;
+    animation: sliderhite 5s ease-in-out 1;
+}.banner-title{
+    color: var(--mainwhite);
+    font-size: 3.2rem;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    transform: uppercase;
+        animation: slideleft 5s ease-in-out 1;
+}
+/*global*/
+a{
+    text-decoration: none;
+}
+.text-white{
+    color: var(--mainwhite);
+}.text-center{
+    text-align: center;
+}.text-primary{
+    color: var(--primarykey);
+}
+.section-subtitle{
+    font-size: 2rem;
+    font-family: var(--slantedtext);
+    letter-spacing: var(--letterspacing);
+        color: var(--primarykey);
+        text-transform: uppercase;
+}
+.section-title{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+/*global*/
+.main-btn,.banner-btn{
+background: var(--primarykey);
+display: inline-block;
+text-transform: uppercase;
+color: var(--maindark);
+padding: 0.8rem 1.2rem;
+font-weight: bold;
+outline: 0.2rem solid var(--primarykey);
+outline-offset: 4px;
+margin-top: 2rem;
+transition: var(--maintransation);
+}
+.main-btn:hover,.banner-btn:hover{
+    color: var(--mainwhite);
+    opacity: 0.7;
+    cursor: pointer;
+}
+.banner-btn{
+    padding: 1.2rem 1.5rem;
+    animation: show 5s ease-in-out 1;
+}
+@keyframes show{
+    0%{
+        transform: scale(2);
+        opacity: 0;
+    } 100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes sliderhite{
+    0%{
+        transform:translateX(1000px);
+    }
+    50%{
+        transform:translateX(-200px);
+    }
+    75%{
+        transform:translateX(50px);
+    }
+    100%{
+        transform:translateX(0px);
+    }
+}@keyframes slideleft{
+    0%{
+        transform:translateX(-1000px);
+    }
+    50%{
+        transform:translateX(200px);
+    }
+    75%{
+        transform:translateX(-50px);
+    }
+    100%{
+        transform:translateX(0px);
+    }
+}
+.content-divider{
+    height: 0.5rem;
+    background:linear-gradient(to left,var(--primarykey),var(--secondrykey),var(--primarykey));
+}
+.skills{
+    background:var(--maingrey);
+}
+.skill{
+text-align: center;
+ padding: 2.5rem 0;
+    transition: var(--maintransation);
+}
+.skill-icon{
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
+    display: inline-block;
+  transition: var(--maintransation);
+}
+.skill-title{
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letterspacing);
+    color: var(--primarykey);
+        transition: var(--maintransation);
+}
+.skill-text{
+    max-width: 13rem;
+    margin: 0 auto;
+}
+.skill:hover{
+    background:var(--primarykey);
+}
+.skill:hover .skill-title{
+    color:var(--mainwhite);
+}
+.skill:hover .skill-icon{
+    transform: translateY(-5px);
+}
+@media screen and (min-width: 576px){
+    .skill{
+        float: left;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1200px){
+    .skill{
+        float: left;
+        width: 25%;
+    }
+}
+.section-center{
+    padding:4rem 0;
+    width:80vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.about-picture{
+    width: 100%;
+    display: block;
+    transition: var(--maintransation);
+}
+.about-img,.about-info{
+padding: 2rem 0;
+}
+.about-picture-container{
+    /*we make background here for when hover over picture opacity work as we expect*/
+    background: var(--primarykey);
+    border:0.5rem solid var(--primarykey);
+    border-radius: 1rem;
+    /*for picture overflow when hover it ... his scale will be bigger*/
+    overflow: hidden;
+}
+.about-picture-container:hover .about-picture{
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+.about-text{
+    margin: 1rem 0;
+    max-width: 26rem;
+}
+@media screen and (min-width: 992px){
+    .about-img,.about-info{
+float: left;
+width: 50%;
+padding: 2rem;
+    }
+}
+.products{
+    background:var(--maindark);
+}
+.product-inventory,.peoducts-info{
+    padding: 2rem 0;
+}
+.product-text{
+    color: var(--mainwhite);
+    margin: 1rem 0;
+    max-width: 26rem;
+}
+.product{
+    padding: 2rem 0;
+}
+.product-img{
+    width: 100%;
+    display: block;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+}
+.product-title{
+    color: var(--mainwhite);
+    letter-spacing: var(--letterspacing);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}.product-price{
+    color: var(--mainwhite);
+    letter-spacing: var(--letterspacing);
+    font-family: var(--slantedtext);
+}
+@media screen and (min-width: 768px){
+    .product{
+        float: left;
+        width: 50%;
+        padding: 2rem 1rem;
+    }
+    .products-info{
+        padding: 2rem 1rem;
+    }
+}
+@media screen and (min-width: 992px){
+    .product{
+        width: 33.3%;
+    }
+}
+@media screen and (min-width: 1200px){
+    .products-info{
+        width: 30%;
+        float: left;
+    }
+    .products-inventory{
+        width: 70%;
+        float: left;
+    }
+    .product{
+        padding: 1.5rem 1rem 0 1rem;
+    }
+}
+.contact{
+    padding-top: 2rem;
+}
+.contact-item{
+    margin-bottom: 3rem;
+}
+.contact-title{
+    color: var(--primarykey);
+    font-family: var(--slantedtext);
+    letter-spacing: var(--letterspacing);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+.contact-text{
+    text-transform: uppercase;
+}
+.form-control{
+    display: block;
+    width: 100%;
+border:none;
+border-bottom: 2px solid var(--primarykey);
+outline:none;
+margin:2rem 0;
+padding: 1.3rem 0;
+font-size: 0.85rem;
+font-weight: bold;    
+}
+.form-control::placeholder{
+    color: var(--primarykey);
+    letter-spacing: var(--letterspacing);
+    text-transform: uppercase;
+}
+@media screen and (min-width: 992px){
+    .contact-info,.contact-form{
+float: left;
+width: 50%;
+padding: 0 1rem;
+    }
+    .contact-info{
+        padding-top: 5rem;
+    }
+}
+.footer{
+    background:var(--maindark);
+    text-align: center;
+}
+.social-icon{
+    color: var(--mainwhite);
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    transition: var(--maintransation);
+}
+.social-icon:hover{
+    color: var(--primarykey);
+}
+.footer-text{
+    text-transform: uppercase;
+    color: var(--mainwhite);
+    margin-top: 1rem;
+    letter-spacing: var(--letterspacing);
+    font-size: 0.85rem;
+}
